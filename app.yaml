@@ -1,0 +1,15 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /api/lab
+  script: lab.app
+- url: /lab
+  static_dir: static
+- url: /lab/css
+  static_dir: static/css
+- url: /api/ro
+  script: ro.app
+- url: /api/login
+  script: login.app

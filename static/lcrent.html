@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>器材借用</title>
+	<meta charset="utf-8" />
+	
+	<link rel="stylesheet" href="../lab/css/main.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../lab/css/main.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>器材借用</h1>
+			<div id="subtitle">液晶光電實驗室器材借用</div>
+			
+		</header>	
+		<div id="det">
+			<div class="form-group square">
+				<label>時間:</label> <br>
+				<input type="text" id="picker"/>
+				<label for="illu">儀器:</label> 
+				<select class="form-control" id="illu">
+					<option>請選擇</option>
+  				</select><br>
+  				<label for="usr">借用人:</label>
+  				<input type="text" class="form-control" id="usr"/>
+  				<br><br>
+  				<label>已選擇時段 <span id="have_choose">0</span></label> <br>
+  				<div id='show'></div>
+  				<button type="button" class="btn" id="subm" onclick="submit();">送出</button>
+  			</div>
+		</div>
+	
+	</div>	
+	<div id="calender">
+		
+		
+		<table id="table_c">
+				<th id="date_show">
+    				<td class="time_label">日期</td>
+  				</th>
+		</table>
+		
+
+	</div>
+	<script>
+		load();
+	</script>
+	
+</body>
+</html>
