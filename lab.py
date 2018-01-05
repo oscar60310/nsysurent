@@ -59,7 +59,12 @@ class MainPage(webapp2.RequestHandler):
 
     else:
       self.response.write('error type')
-      
+  def post(self):
+    action = self.request.get("ac") + ''
+    if action == 'pick':
+      self.response.write('yo')
+    else:
+      self.response.write('error type')    
 
 
 class LED(db.Model):

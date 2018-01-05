@@ -1,5 +1,5 @@
 var choose;
-var items = "UV光,紫光雷射,綠光雷射,VTcurve,POM-1,POM-2,快速溫控器,精密溫控器,20倍放大器,100倍放大器,光譜儀,Instec溫控器";
+var items = "UV光,紫光雷射,綠光雷射,VTcurve,POM-1,POM-2,快速溫控器,精密溫控器1,精密溫控器2,20倍放大器,100倍放大器,光譜儀,Instec溫控器";
 var day;
 function load()
 {
