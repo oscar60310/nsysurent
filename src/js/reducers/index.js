@@ -1,9 +1,6 @@
-import { combineReducers } from "redux"
-
-import tweets from "./tweetsReducer"
-import user from "./userReducer"
+import { combineReducers } from 'redux';
+import equipment from './eqReducer';
 
 export default combineReducers({
-  tweets,
-  user,
-})
+  equipment,
+});
