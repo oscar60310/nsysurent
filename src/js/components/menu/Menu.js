@@ -22,7 +22,10 @@ export default class MenuComponent extends React.Component {
   componentWillMount() {
     this.props.dispatch(eqAction.getEquipmentList());
   }
-  pickEqHandler = (event, data) => this.props.dispatch(eqAction.pickEquipment(data.value));
+  pickEqHandler = (event, data) => {
+    this.props.dispatch(eqAction.pickEquipment(data.value));
+    this.props.dispatch(eqAction.getRentList(data.value));
+  }
   pickDateHandler = data => this.props.dispatch(eqAction.pickDate(data));
   render() {
     const eqItems = this.props.eqList.map(eq => ({ key: eq, value: eq, text: eq }));

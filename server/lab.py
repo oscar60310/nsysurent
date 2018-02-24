@@ -7,9 +7,10 @@ import json
 class MainPage(webapp2.RequestHandler):
 
   def get(self):
-    self.response.headers['Content-Type'] = 'application/json'  
-    now = datetime.datetime.now();
-    now = now +datetime.timedelta(hours=8);
+    self.response.headers['Content-Type'] = 'application/json' 
+    self.response.headers.add_header('Access-Control-Allow-Origin', '*') 
+    now = datetime.datetime.now()
+    now = now +datetime.timedelta(hours=8)
 
     action = self.request.get("ac") + ''
   
@@ -43,6 +44,7 @@ class MainPage(webapp2.RequestHandler):
     else:
       self.response.set_status(400)
   def post(self):
+    self.response.headers.add_header('Access-Control-Allow-Origin', '*')
     self.response.headers['Content-Type'] = 'application/json'   
     jsonstring = self.request.body
     jsonobject = json.loads(jsonstring)
@@ -77,7 +79,10 @@ class MainPage(webapp2.RequestHandler):
 
     else:
       self.response.set_status(400)
-
+def options(self):      
+  self.response.headers['Access-Control-Allow-Origin'] = '*'
+  self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
+  self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
 
 class LED(db.Model):
   date = db.DateProperty()
