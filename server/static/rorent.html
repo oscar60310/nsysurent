@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>場地租借</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="../lab/css/romain.css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../lab/css/romain.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+</head>
+<body>
+	<div id="main">
+		<header id="header">
+			<h1>場地租借</h1>
+			<div id="subtitle">中山光電系學會場地借用</div>
+			
+		</header>	
+		<div id="det">
+			<div class="form-group square">
+				<label>時間:</label> <br>
+				<input type="text" id="picker"/>
+				<label for="illu">場地:</label> 
+				<select class="form-control" id="illu">
+					<option>請選擇</option>
+  				</select><br>
+  				<label for="usr">借用人:</label>
+
+  				<a href="../api/login?re=/lab/rorent.html&ac=login">登入</a>
+  				<div id='usr'>正在查詢登入狀態</div>
+  				<br><br>
+  				<label>已選擇時段 <span id="have_choose">0</span></label> <br>
+  				<div id='show'></div>
+  				<div>借用前請務必閱讀場地<a href='http://nsysudops.appspot.com/news/space.jsp' target='_blank'>相關規定</a></div>
+  				<button id='sub_btn' type="button" class="btn btn-primary btn-lg btn-block disabled" onclick="submit();">送出</button>
+  				<br>
+  				
+  			</div>
+		</div>
+	
+	</div>	
+	<div id="calender">
+		
+		
+		<table id="table_c">
+				<th id="date_show">
+    				<td class="time_label">日期</td>
+  				</th>
+		</table>
+		
+
+	</div>
+	<script>
+		load();
+	</script>
+	
+</body>
+</html>

@@ -49,14 +49,14 @@ module.exports = {
   },
   plugins: debug ? [
     new CopyWebpackPlugin([
-      { from: 'static' },
+      { from: 'static' }, { from: 'index.html' },
     ])] :
     [
       new webpack.optimize.DedupePlugin(),
       new webpack.optimize.OccurenceOrderPlugin(),
       new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false, compress: true }),
       new CopyWebpackPlugin([
-        { from: 'static' },
+        { from: 'static' }, { from: 'index.html' },
       ]),
     ],
 };
