@@ -4,7 +4,9 @@ threadsafe: true
 
 handlers:
 - url: /api/lab
-  script: lab.app
+  script: labv1.app
+- url: /v2/api/lab
+  script: labv2.app
 - url: /lab
   static_dir: static
 - url: /lab/css

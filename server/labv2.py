@@ -79,10 +79,10 @@ class MainPage(webapp2.RequestHandler):
 
     else:
       self.response.set_status(400)
-def options(self):      
-  self.response.headers['Access-Control-Allow-Origin'] = '*'
-  self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
-  self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
+  def options(self):      
+    self.response.headers['Access-Control-Allow-Origin'] = '*'
+    self.response.headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept'
+    self.response.headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE'
 
 class LED(db.Model):
   date = db.DateProperty()
@@ -93,5 +93,5 @@ class LED(db.Model):
 
 
 app = webapp2.WSGIApplication([
-    ('/api/lab', MainPage),
+    ('/v2/api/lab', MainPage),
 ], debug=True)
